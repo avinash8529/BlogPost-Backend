@@ -1,0 +1,98 @@
+{
+	"info": {
+		"_postman_id": "b8872f40-75ea-4153-93cf-6b5f553cdc1d",
+		"name": "Blog Post",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "25587327",
+		"_collection_link": "https://cloudy-crater-671904.postman.co/workspace/My-Workspace~ed650c7a-2fcb-496e-8dbe-b2c52291345b/collection/25587327-b8872f40-75ea-4153-93cf-6b5f553cdc1d?action=share&creator=25587327&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "Registration/Login",
+			"item": [
+				{
+					"name": "Registration",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"test2\",\n    \"email\":\"test2@gmail.com\",\n    \"password\":\"test1\",\n    \"profilePicture\":\"https://images.unsplash.com/photo-1628563694622-5a76957fd09c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW5zdGFncmFtJTIwcHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:3001/registration"
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": "localhost:3001/login"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Blogs editing",
+			"item": [
+				{
+					"name": "Upload Blog",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": "localhost:3001/writeblog"
+					},
+					"response": []
+				},
+				{
+					"name": "getAllBlogs",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:3001/get"
+					},
+					"response": []
+				},
+				{
+					"name": "updateBlog",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoidGVzdCIsInVzZXJJZCI6IjA5NmJjZGUwLWZiZjYtMTFlZC1hMGI3LWQ3MWE2OWM2ZThlNiIsImVtYWlsIjoidGVzdDRAZ21haWwuY29tIiwiaWF0IjoxNjg1MTI2OTgyfQ.PRF1IM42v4tBv03IVKCuOJNnqWBvjnLDuQW8R-y3uJM"
+							}
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\":\"vue.js is a webdevelopment \",\n    \"description\":\"this is alternate to react frame work\",\n    \"picture\":\"https://cdn.pixabay.com/photo/2015/03/03/08/55/portrait-657116_1280.jpg\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:3001/blog/367f4370-fbf6-11ed-a0b7-d71a69c6e8e6/update"
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteBlog",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
