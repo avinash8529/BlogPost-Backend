@@ -6,12 +6,12 @@ const registration = async (req, res) => {
 
     if (doc) {
       return res.send({
-        message: 'Welcomne To Blog Registration successful',
+        message: 'Welcomne To Blog Registration successfull',
       });
     }
 
     return res.send({
-      message: 'registration not successfully',
+      message: 'registration not successfull',
     });
   } catch (err) {
     return res.unAuthorized();

@@ -61,7 +61,7 @@ const login = async (payload) => {
         password: savedPassword, name, public_id: userId,
       },
     } = isUserExist;
-    const verify = bcrypt.compare(password, savedPassword);
+    const verify = await bcrypt.compare(password, savedPassword);
 
     if (verify) {
       const data = {
@@ -72,7 +72,7 @@ const login = async (payload) => {
       return { doc: { isLoggedIn: true, token, message: 'logged in successfully' } };
     }
 
-    return { doc: { isLoggedIn: false, message: 'incorrect password!!' } };
+    return { doc: { isLoggedIn: false, message: 'incorrect username or password!!' } };
   }
 
   return { message: 'user not exist' };

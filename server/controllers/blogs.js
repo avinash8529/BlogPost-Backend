@@ -6,7 +6,9 @@ const writeBlogs = async (req, res) => {
     const { doc } = await BlogService.writeBlogs(data);
 
     if (doc) {
-      return res.postRequest();
+      return res.send({
+        message: 'post saved successfully',
+      });
     }
 
     return res.send({ message: ' data missing plss check ' });
